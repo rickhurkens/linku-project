@@ -1,5 +1,23 @@
-<header>Header content goes here</header>
+<script>
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
+	import '../app.css';
+</script>
 
-<slot />
+<div id="app">
+	<Header />
 
-<footer>Footer content goes here</footer>
+	<main>
+		<slot />
+	</main>
+
+	<Footer />
+</div>
+
+<style>
+	#app {
+		max-width: var(--content-width);
+		margin: 0 auto;
+		padding: var(--spacing-2xs) var(--spacing-2xs);
+	}
+</style>

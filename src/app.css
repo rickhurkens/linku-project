@@ -1,0 +1,36 @@
+@import '@fontsource/pacifico';
+@import '@fontsource-variable/inter';
+@import './lib/css/reset.css';
+
+:root {
+	--font-script: 'Pacifico', 'Brush Script MT', cursive;
+	--font-sans-serif: 'Inter Variable', 'Tahoma', 'Verdana', 'Helvetica', 'Arial', sans-serif;
+	--font-headings: var(--font-sans-serif);
+	--font-body: var(--font-sans-serif);
+
+	--color-bg: rgb(255 240 241);
+	--color-1: rgb(33 28 64);
+	--color-2: rgb(102 97 132);
+	--color-3: rgb(13 25 47);
+	--color-4: rgb(115 40 255);
+	--color-5: rgb(83 176 68);
+
+	--spacing-3xs: 8px;
+	--spacing-2xs: 16px;
+	--spacing-xs: 24px;
+	--spacing-s: 36px;
+	--spacing-m: 48px;
+	--spacing-l: 60px;
+	--spacing-xl: 80px;
+	--spacing-2xl: 100px;
+	--spacing-3xl: 120px;
+
+	--content-width: 1140px;
+
+	font-family: var(--font-body);
+	color: var(--color-2);
+}
+
+body {
+	background: var(--color-bg);
+}
