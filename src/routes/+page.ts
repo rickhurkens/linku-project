@@ -4,10 +4,10 @@ import type { PageLoad } from './$types';
 import brandingImg from '$lib/images/dummy_imgs/branding.png';
 import illustrationImg from '$lib/images/dummy_imgs/illustration.png';
 import productdesignImg from '$lib/images/dummy_imgs/productdesign.png';
-import works1Img from '$lib/images/dummy_imgs/works1.png';
-import works2Img from '$lib/images/dummy_imgs/works2.png';
-import works3Img from '$lib/images/dummy_imgs/works3.png';
-import works4Img from '$lib/images/dummy_imgs/works4.png';
+import works1Img from '$lib/images/dummy_imgs/works2.png';
+import works2Img from '$lib/images/dummy_imgs/works1.png';
+import works3Img from '$lib/images/dummy_imgs/works4.png';
+import works4Img from '$lib/images/dummy_imgs/works3.png';
 
 export const load: PageLoad = ({ params }) => {
 	return {

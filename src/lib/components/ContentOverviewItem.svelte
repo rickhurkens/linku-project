@@ -36,7 +36,8 @@
 
 <style>
 	article img {
-		margin-bottom: var(--spacing-xs);
+		--overviewitem-image-margin: var(--spacing-xs);
+		margin-bottom: var(--overviewitem-image-margin);
 		width: 100%;
 		height: auto;
 		object-fit: cover;
@@ -45,6 +46,33 @@
 
 	.grid--small-item img {
 		aspect-ratio: 16 / 10;
+	}
+
+	.masonry-item {
+		width: calc(50% - 0.5 * var(--masonry-column-gap));
+		height: var(--masonry-large-item);
+	}
+	.masonry-item:nth-of-type(2),
+	.masonry-item:nth-of-type(3) {
+		height: var(--masonry-small-item);
+	}
+
+	.masonry-item a:has(.image-wrapper) {
+		flex: 1 0;
+		min-height: 0;
+	}
+
+	.masonry-item .image-wrapper {
+		height: 100%;
+	}
+
+	.masonry-item .image-wrapper img {
+		height: calc(100% - var(--overviewitem-image-margin));
+	}
+
+	article {
+		display: flex;
+		flex-flow: column nowrap;
 	}
 
 	article h1 {
@@ -91,7 +119,7 @@
 		}
 
 		article img {
-			margin-bottom: var(--spacing-s);
+			--overviewitem-image-margin: var(--spacing-s);
 		}
 
 		.masonry-item img {
