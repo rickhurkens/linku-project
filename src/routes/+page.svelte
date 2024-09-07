@@ -1,28 +1,31 @@
-<script>
+<script lang="ts">
+	import type { PageData } from './$types';
 	import HomepageSection from '$lib/components/HomepageSection.svelte';
+	import ContentOverview from '$lib/components/ContentOverview.svelte';
+
+	export let data: PageData;
+
+	$: specialisations = data?.specialisations;
+	$: works = data?.works; /* TODO: maybe limit amount of items on smaller screens */
+	$: blogs = data?.blogs;
 </script>
 
 <HomepageSection title="Specialisation" subtitle="What I do best">
-	<div class="content"></div>
+	<ContentOverview content={specialisations} urlPrefix="/works/" type="grid--small" />
 </HomepageSection>
 <HomepageSection
 	title="Works"
 	subtitle="Projects that are clients love"
 	morelink={{ url: '/works', title: 'Explore all projects' }}
 >
-	<div class="content"></div></HomepageSection
->
+	<ContentOverview content={works} urlPrefix="/works/work/" type="masonry" />
+</HomepageSection>
 <HomepageSection
 	title="Design newsletter"
 	subtitle="My weekly newsletter and blogs"
 	morelink={{ url: '/blog', title: 'Explore all blogs' }}
-	><div class="content"></div></HomepageSection
+	><ContentOverview content={blogs} urlPrefix="/blog/" type="carousel" /></HomepageSection
 >
 
 <style>
-	.content {
-		height: 200px;
-		width: 100%;
-		background: var(--color-2);
-	}
 </style>

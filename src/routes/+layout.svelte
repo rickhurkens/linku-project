@@ -18,7 +18,7 @@
 	#app {
 		max-width: var(--content-width);
 		margin: 0 auto;
-		padding: var(--spacing-2xs) var(--spacing-2xs);
+		padding: var(--spacing-2xs) var(--spacing-xs);
 	}
 
 	@media (width > 768px) {
