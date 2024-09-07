@@ -1,0 +1,89 @@
+<script lang="ts">
+	import Fa from 'svelte-fa';
+	import { faArrowRight, faMinus } from '@fortawesome/free-solid-svg-icons';
+
+	export let title: string;
+	export let subtitle: string | undefined = undefined;
+	export let morelink: Link | undefined = undefined;
+</script>
+
+<section>
+	<hgroup>
+		{#if subtitle}<p><Fa icon={faMinus} class="inline" />{subtitle}</p>{/if}
+		<h2>{title}</h2>
+	</hgroup>
+	<div class="contents">
+		<slot />
+	</div>
+	{#if morelink}
+		<a href={morelink.url} class="morelink">
+			<span>{morelink.title}</span>
+			<Fa icon={faArrowRight} size="1x" />
+		</a>
+	{/if}
+</section>
+
+<style>
+	section {
+		display: grid;
+		grid-template-columns: [left] 1fr [right] auto;
+		grid-auto-rows: auto;
+		grid-template-areas:
+			'header header'
+			'main main'
+			'link link';
+		align-items: last baseline;
+		margin-bottom: var(--spacing-l);
+	}
+
+	hgroup {
+		grid-area: header;
+		margin-bottom: var(--spacing-s);
+		color: var(--color-1);
+		font-weight: var(--font-weight-l);
+	}
+
+	hgroup > p {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		column-gap: var(--spacing-2xs);
+		margin-bottom: var(--spacing-2xs);
+		/* TODO: not the right dash icon */
+	}
+
+	h2 {
+		font-size: var(--font-size-2xl);
+		font-weight: var(--font-weight-3xl);
+	}
+
+	.contents {
+		grid-area: main;
+	}
+
+	section:has(.morelink) .contents {
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.morelink {
+		grid-area: link;
+		display: flex;
+		flex-flow: row nowrap;
+		column-gap: var(--spacing-2xs);
+		justify-content: right;
+		align-items: center;
+	}
+
+	@media (width > 768px) {
+		section {
+			grid-template-areas:
+				'header link'
+				'main main';
+			margin-bottom: var(--spacing-xl);
+		}
+
+		h2 {
+			font-size: var(--font-size-3xl);
+		}
+	}
+</style>

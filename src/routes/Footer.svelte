@@ -1,7 +1,6 @@
-<script>
-	import { page } from '$app/stores';
+<script lang="ts">
+	import Navigation from '$lib/components/Navigation.svelte';
 	import Fa from 'svelte-fa';
-	import { faBars } from '@fortawesome/free-solid-svg-icons';
 	import {
 		faBehance,
 		faDribbble,
@@ -10,6 +9,12 @@
 		faInstagram
 	} from '@fortawesome/free-brands-svg-icons';
 	import logo from '$lib/images/logo2.png';
+
+	const navigationItems: Link[] = [
+		{ url: '/works', title: 'Works' },
+		{ url: '/about', title: 'About' },
+		{ url: '/media', title: 'Media' }
+	];
 </script>
 
 <footer>
@@ -17,22 +22,7 @@
 		<a class="logo" href="/">
 			<img src={logo} alt="Logo Haruno" />
 		</a>
-		<nav>
-			<div class="mobile-menu">
-				<Fa icon={faBars} size="1x" />
-			</div>
-			<ul>
-				<li aria-current={$page.url.pathname.startsWith('/works') ? 'page' : undefined}>
-					<a href="/works">Works</a>
-				</li>
-				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-					<a href="/works">About</a>
-				</li>
-				<li aria-current={$page.url.pathname === '/media' ? 'page' : undefined}>
-					<a href="/works">Media</a>
-				</li>
-			</ul>
-		</nav>
+		<Navigation id="footer-nav" items={navigationItems} side="left" />
 	</div>
 	<div class="social-links">
 		<ul>
@@ -79,24 +69,15 @@
 
 	.logo {
 		height: 100%;
-		margin-right: var(--spacing-2xs);
+		margin-right: var(--spacing-xs);
 	}
 
 	.logo img {
 		height: 100%;
 	}
 
-	nav .mobile-menu {
-		color: var(--color-1);
-		margin-right: var(--spacing-xs);
-	}
-
-	nav ul {
-		display: none;
-	}
-
 	.social-links {
-		margin-right: var(--spacing-xs);
+		margin-right: var(--spacing-xs); /* TODO: really? */
 	}
 
 	.social-links ul {
@@ -112,10 +93,17 @@
 	.social-links a {
 		color: var(--color-3);
 	}
+	.social-links a:hover {
+		color: var(--color-5);
+	}
 
 	@media (width > 768px) {
-		.mobile-menu {
-			display: none;
+		.social-links {
+			margin-right: 0;
+		}
+
+		.logo {
+			margin-right: var(--spacing-m);
 		}
 	}
 </style>

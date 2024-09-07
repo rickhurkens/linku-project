@@ -1,33 +1,20 @@
-<script>
-	import { page } from '$app/stores';
-	import Fa from 'svelte-fa';
-	import { faBars } from '@fortawesome/free-solid-svg-icons';
+<script lang="ts">
+	import Navigation from '$lib/components/Navigation.svelte';
 	import logo from '$lib/images/logo.png';
+
+	const navigationItems: Link[] = [
+		{ url: '/works', title: 'Works' },
+		{ url: '/about', title: 'About' },
+		{ url: '/media', title: 'Media' },
+		{ url: '/contact', title: 'Contact' }
+	];
 </script>
 
 <header>
 	<a class="logo" href="/">
 		<img src={logo} alt="Logo Haruno" />
 	</a>
-	<nav>
-		<div class="mobile-menu">
-			<Fa icon={faBars} size="1x" />
-		</div>
-		<ul>
-			<li aria-current={$page.url.pathname.startsWith('/works') ? 'page' : undefined}>
-				<a href="/works">Works</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/works">About</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/media' ? 'page' : undefined}>
-				<a href="/works">Media</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-				<a href="/works">Contact</a>
-			</li>
-		</ul>
-	</nav>
+	<Navigation id="header-nav" items={navigationItems} side="right" />
 </header>
 
 <style>
@@ -46,20 +33,5 @@
 
 	.logo img {
 		height: 100%;
-	}
-
-	nav .mobile-menu {
-		color: var(--color-1);
-		margin-right: var(--spacing-xs);
-	}
-
-	nav ul {
-		display: none;
-	}
-
-	@media (width > 768px) {
-		.mobile-menu {
-			display: none;
-		}
 	}
 </style>

@@ -8,6 +8,13 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	declare module '*.svelte';
+
+	declare interface Link {
+		title: string;
+		url: string;
+	}
 }
 
 export {};
