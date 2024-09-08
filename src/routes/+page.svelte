@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import HomepageSection from '$lib/components/HomepageSection.svelte';
 	import ContentOverview from '$lib/components/ContentOverview.svelte';
+	import HeroSection from '$lib/components/HeroSection.svelte';
 
 	export let data: PageData;
 
@@ -10,6 +11,7 @@
 	$: blogs = data?.blogs;
 </script>
 
+<HeroSection />
 <HomepageSection title="Specialisation" subtitle="What I do best">
 	<ContentOverview content={specialisations} urlPrefix="/works/" type="grid--small" />
 </HomepageSection>

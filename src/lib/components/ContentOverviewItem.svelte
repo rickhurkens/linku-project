@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
 	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+	import ButtonMore from './ButtonMore.svelte';
 
 	type ContentOverviewItem = {
 		title: string;
@@ -12,25 +13,23 @@
 	export let item: ContentOverviewItem;
 	export let urlPrefix: string;
 	export let type: 'grid--small' | 'masonry' | 'carousel';
+
+	$: itemHref = `${urlPrefix}${item.id}`;
 </script>
 
 <article class={`${type}-item`}>
 	<!-- svelte-ignore a11y-missing-attribute -->
-	<a href={`${urlPrefix}${item.id}`} title={item.title}>
+	<a href={itemHref} title={item.title}>
 		<div class="image-wrapper">
 			<img src={item.imgUrl} />
 			{#if type === 'carousel'}
-				<button class="morelink">
-					<span>Read</span>
-					<Fa icon={faArrowRight} size="1x" />
-				</button>
+				<ButtonMore link={{ title: 'Read', url: itemHref }} />
 			{/if}
 		</div>
 	</a>
-	<a href={`${urlPrefix}${item.id}`} title={item.title}><h1>{item.title}</h1></a>
+	<a href={itemHref} title={item.title}><h1>{item.title}</h1></a>
 	{#if item.leadText}
-		<a href={`${urlPrefix}${item.id}`} title={item.title}><p class="leadtext">{item.leadText}</p></a
-		>
+		<a href={itemHref} title={item.title}><p class="leadtext">{item.leadText}</p></a>
 	{/if}
 </article>
 
@@ -83,19 +82,6 @@
 
 	.image-wrapper img {
 		height: 100%;
-	}
-
-	/* TODO: hover state */
-	.morelink {
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: center;
-		column-gap: var(--spacing-2xs);
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		background: white;
-		padding: var(--spacing-xs) var(--spacing-s);
 	}
 
 	.grid--small-item img {
