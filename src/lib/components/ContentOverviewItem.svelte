@@ -35,44 +35,16 @@
 </article>
 
 <style>
-	article img {
-		--overviewitem-image-margin: var(--spacing-xs);
-		margin-bottom: var(--overviewitem-image-margin);
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-		aspect-ratio: 4 / 3;
-	}
-
-	.grid--small-item img {
-		aspect-ratio: 16 / 10;
-	}
-
-	.masonry-item {
-		width: calc(50% - 0.5 * var(--masonry-column-gap));
-		height: var(--masonry-large-item);
-	}
-	.masonry-item:nth-of-type(2),
-	.masonry-item:nth-of-type(3) {
-		height: var(--masonry-small-item);
-	}
-
-	.masonry-item a:has(.image-wrapper) {
-		flex: 1 0;
-		min-height: 0;
-	}
-
-	.masonry-item .image-wrapper {
-		height: 100%;
-	}
-
-	.masonry-item .image-wrapper img {
-		height: calc(100% - var(--overviewitem-image-margin));
-	}
-
 	article {
 		display: flex;
 		flex-flow: column nowrap;
+		row-gap: var(--spacing-xs);
+	}
+
+	article img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
 	}
 
 	article h1 {
@@ -80,12 +52,14 @@
 		font-weight: var(--font-weight-xl);
 	}
 
-	article:has(.leadtext) h1 {
-		margin-bottom: var(--spacing-xs);
-	}
-
 	article p {
 		padding-right: var(--spacing-s);
+		display: -webkit-box;
+		text-overflow: ellipsis;
+		line-clamp: 3;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	a {
@@ -96,8 +70,19 @@
 		text-decoration: unset;
 	}
 
+	a:has(.image-wrapper) {
+		flex: 1 0; /* TODO: causes images in carousel to be of different height based on text */
+		min-height: 0;
+		aspect-ratio: 16 / 10;
+	}
+
 	.image-wrapper {
 		position: relative;
+		height: 100%;
+	}
+
+	.image-wrapper img {
+		height: 100%;
 	}
 
 	/* TODO: hover state */
@@ -113,13 +98,36 @@
 		padding: var(--spacing-xs) var(--spacing-s);
 	}
 
-	@media (width > 768px) {
-		article h1 {
-			font-size: var(--font-size-xl);
-		}
+	.grid--small-item img {
+		aspect-ratio: 16 / 10;
+	}
 
+	.masonry-item {
+		width: var(--masonry-item-width);
+		height: var(--masonry-large-item);
+	}
+	.masonry-item:nth-of-type(2),
+	.masonry-item:nth-of-type(3),
+	.masonry-item:nth-of-type(6) {
+		height: var(--masonry-small-item);
+	}
+
+	@media (width > 480px) {
+		.carousel-item {
+			/* TODO: less width as designed because on small screens
+			   there's not enough margin to show the next items. */
+			min-width: calc(50cqi - var(--carousel-col-gap));
+			scroll-snap-align: start;
+		}
+	}
+
+	@media (width > 768px) {
 		article img {
 			--overviewitem-image-margin: var(--spacing-s);
+		}
+
+		article h1 {
+			font-size: var(--font-size-xl);
 		}
 
 		.masonry-item img {

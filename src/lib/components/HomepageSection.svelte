@@ -59,6 +59,7 @@
 
 	.contents {
 		grid-area: main;
+		container: section-contents / inline-size;
 	}
 
 	section:has(.morelink) .contents {
