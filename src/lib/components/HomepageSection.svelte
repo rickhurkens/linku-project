@@ -33,7 +33,6 @@
 			'main main'
 			'link link';
 		align-items: last baseline;
-		margin-bottom: var(--spacing-l);
 	}
 
 	hgroup {
@@ -80,7 +79,6 @@
 			grid-template-areas:
 				'header link'
 				'main main';
-			margin-bottom: var(--spacing-xl);
 		}
 
 		h2 {

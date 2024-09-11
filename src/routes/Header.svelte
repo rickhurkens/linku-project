@@ -34,4 +34,10 @@
 	.logo img {
 		height: 100%;
 	}
+
+	@media (width > 768px) {
+		header {
+			margin-bottom: var(--spacing-xs);
+		}
+	}
 </style>
