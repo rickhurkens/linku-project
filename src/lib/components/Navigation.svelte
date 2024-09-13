@@ -80,8 +80,9 @@
 	}
 
 	.mobile-menu button {
-		color: var(--color-1);
+		background: unset;
 		margin-right: var(--spacing-xs);
+		color: var(--color-1);
 		transition: scale 100ms;
 		transform: perspective(1px) translateZ(0) scale(1);
 		backface-visibility: hidden;

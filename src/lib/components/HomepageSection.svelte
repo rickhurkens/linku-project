@@ -7,7 +7,7 @@
 	export let morelink: Link | undefined = undefined;
 </script>
 
-<section>
+<section class="homepage-section">
 	<hgroup>
 		{#if subtitle}<p><Fa icon={faMinus} class="inline" />{subtitle}</p>{/if}
 		<h2>{title}</h2>
@@ -24,7 +24,7 @@
 </section>
 
 <style>
-	section {
+	.homepage-section {
 		display: grid;
 		grid-template-columns: [left] 1fr [right] auto;
 		grid-auto-rows: auto;
@@ -39,7 +39,6 @@
 		grid-area: header;
 		margin-bottom: var(--spacing-s);
 		color: var(--color-1);
-		font-weight: var(--font-weight-l);
 	}
 
 	hgroup > p {
@@ -51,17 +50,12 @@
 		/* TODO: not the right dash icon */
 	}
 
-	h2 {
-		font-size: var(--font-size-2xl);
-		font-weight: var(--font-weight-3xl);
-	}
-
 	.contents {
 		grid-area: main;
 		container: section-contents / inline-size;
 	}
 
-	section:has(.morelink) .contents {
+	.homepage-section:has(.morelink) .contents {
 		margin-bottom: var(--spacing-xs);
 	}
 
@@ -75,14 +69,10 @@
 	}
 
 	@media (width > 768px) {
-		section {
+		.homepage-section {
 			grid-template-areas:
 				'header link'
 				'main main';
-		}
-
-		h2 {
-			font-size: var(--font-size-3xl);
 		}
 	}
 </style>

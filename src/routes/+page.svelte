@@ -4,6 +4,7 @@
 	import ContentOverview from '$lib/components/ContentOverview.svelte';
 	import HeroSection from '$lib/components/HeroSection.svelte';
 	import LogosSection from '$lib/components/LogosSection.svelte';
+	import ContactSection from '$lib/components/ContactSection.svelte';
 
 	export let data: PageData;
 
@@ -35,3 +36,5 @@
 >
 	<ContentOverview content={blogs} urlPrefix="/blog/" type="carousel" />
 </HomepageSection>
+
+<ContactSection />

@@ -55,8 +55,6 @@
 	}
 
 	.tagline {
-		font-weight: var(--font-weight-l);
-		font-size: var(--font-size-s);
 		padding-right: var(--spacing-3xs);
 	}
 

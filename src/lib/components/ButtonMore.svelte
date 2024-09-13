@@ -12,15 +12,19 @@
 
 <style>
 	/* TODO: hover state & responsive sizing */
-	.morelink {
+	:global(.morelink) {
 		display: flex;
 		flex-flow: row nowrap;
+		justify-content: center;
 		align-items: center;
 		column-gap: var(--spacing-2xs);
+		padding: var(--spacing-xs) var(--spacing-s);
+	}
+
+	.morelink {
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		background: white;
-		padding: var(--spacing-xs) var(--spacing-s);
 	}
 </style>
