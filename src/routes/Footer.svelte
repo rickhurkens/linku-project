@@ -10,10 +10,14 @@
 	} from '@fortawesome/free-brands-svg-icons';
 	import logo from '$lib/images/logo2.png';
 
-	const navigationItems: Link[] = [
+	export let contactLinkInFooter: boolean;
+
+	let navigationItems: Link[];
+	$: navigationItems = [
 		{ url: '/works', title: 'Works' },
 		{ url: '/about', title: 'About' },
-		{ url: '/media', title: 'Media' }
+		{ url: '/media', title: 'Media' },
+		...(contactLinkInFooter ? [{ url: '/contact', title: 'Contact' }] : [])
 	];
 </script>
 

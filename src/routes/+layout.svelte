@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import '../app.css';
+
+	$: contactLinkInFooter =
+		$page.data.contactLinkInFooter === undefined ? true : $page.data.contactLinkInFooter;
 </script>
 
 <div id="app">
@@ -11,7 +15,7 @@
 		<slot />
 	</main>
 
-	<Footer />
+	<Footer {contactLinkInFooter} />
 </div>
 
 <style>

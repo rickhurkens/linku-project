@@ -11,6 +11,7 @@ import works4Img from '$lib/images/dummy_imgs/works3.png';
 
 export const load: PageLoad = ({ params }) => {
 	return {
+		contactLinkInFooter: false,
 		specialisations: [
 			{ title: 'Product design', imgUrl: productdesignImg, id: 'product-design' },
 			{ title: 'Branding', imgUrl: brandingImg, id: 'branding' },
