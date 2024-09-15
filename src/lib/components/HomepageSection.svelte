@@ -16,7 +16,7 @@
 		<slot />
 	</div>
 	{#if morelink}
-		<a href={morelink.url} class="morelink">
+		<a href={morelink.url} class="overviewlink">
 			<span>{morelink.title}</span>
 			<Fa icon={faArrowRight} size="1x" />
 		</a>
@@ -55,11 +55,11 @@
 		container: section-contents / inline-size;
 	}
 
-	.homepage-section:has(.morelink) .contents {
+	.homepage-section:has(.overviewlink) .contents {
 		margin-bottom: var(--spacing-xs);
 	}
 
-	.morelink {
+	.overviewlink {
 		grid-area: link;
 		display: flex;
 		flex-flow: row nowrap;

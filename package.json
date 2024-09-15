@@ -35,6 +35,8 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"embla-carousel-svelte": "^8.3.0",
+		"embla-carousel-wheel-gestures": "^8.0.1",
 		"svelte-fa": "^4.0.2"
 	}
 }

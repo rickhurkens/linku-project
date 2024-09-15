@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Fa from 'svelte-fa';
-	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 	import ButtonMore from './ButtonMore.svelte';
 
 	type ContentOverviewItem = {
@@ -15,9 +13,11 @@
 	export let type: 'grid--small' | 'masonry' | 'carousel';
 
 	$: itemHref = `${urlPrefix}${item.id}`;
+
+	let classes: string = `${type}-item`;
 </script>
 
-<article class={`${type}-item`}>
+<article class={classes}>
 	<!-- svelte-ignore a11y-missing-attribute -->
 	<a href={itemHref} title={item.title}>
 		<div class="image-wrapper">
@@ -98,12 +98,16 @@
 		height: var(--masonry-small-item);
 	}
 
+	.carousel-item {
+		min-width: 80cqi;
+		scroll-snap-align: start;
+	}
+
 	@media (width > 480px) {
 		.carousel-item {
 			/* TODO: less width as designed because on small screens
 			   there's not enough margin to show the next items. */
 			min-width: calc(50cqi - var(--carousel-col-gap));
-			scroll-snap-align: start;
 		}
 	}
 
@@ -118,6 +122,13 @@
 
 		.masonry-item img {
 			aspect-ratio: unset;
+		}
+	}
+
+	@media (width > 1140px) {
+		/* larger than max content width */
+		.carousel-item {
+			min-width: calc(50cqi - 0.5 * var(--carousel-col-gap));
 		}
 	}
 </style>

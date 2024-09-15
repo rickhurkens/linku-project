@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import ContentOverviewItem from './ContentOverviewItem.svelte';
+	import emblaCarouselSvelte from 'embla-carousel-svelte';
+	import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
+	import type { EmblaOptionsType, EmblaPluginType } from 'embla-carousel';
 
 	type ContentOverviewItem = {
 		title: string;
@@ -12,29 +14,29 @@
 	export let content: ContentOverviewItem[];
 	export let urlPrefix: string;
 	export let type: 'grid--small' | 'masonry' | 'carousel';
-	let overviewElement: HTMLDivElement;
 
-	onMount(() => {
-		/* TODO: This is made so the user can scroll through this on desktop.
-			 Would feel nicer if this was implemented with grab.
-		*/
-		if (type === 'carousel') {
-			overviewElement.addEventListener('wheel', (event) => {
-				if (event.deltaY % 1 !== 0) {
-					// check if is not a trackpad
-					event.preventDefault();
-					overviewElement.scrollLeft += event.deltaY;
-				}
-			});
-		}
-	});
+	let options: EmblaOptionsType = {
+		loop: false,
+		align: 'start'
+	};
+	let plugins: EmblaPluginType[] = [WheelGesturesPlugin()];
 </script>
 
-<div class="content-overview {type}" bind:this={overviewElement}>
-	{#each content as item}
-		<ContentOverviewItem {item} {urlPrefix} {type} />
-	{/each}
-</div>
+{#if type === 'carousel'}
+	<div class="carousel-wrapper" use:emblaCarouselSvelte={{ options, plugins }}>
+		<div class="carousel">
+			{#each content as item}
+				<ContentOverviewItem {item} {urlPrefix} {type} />
+			{/each}
+		</div>
+	</div>
+{:else}
+	<div class="content-overview {type}">
+		{#each content as item}
+			<ContentOverviewItem {item} {urlPrefix} {type} />
+		{/each}
+	</div>
+{/if}
 
 <style>
 	.content-overview {
@@ -93,15 +95,22 @@
 	} 
 	*/
 
+	.carousel-wrapper {
+		cursor: grab;
+	}
+
+	.carousel {
+		--carousel-col-gap: var(--spacing-s);
+
+		display: flex;
+		column-gap: var(--carousel-col-gap);
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+	}
+
 	@media (width > 480px) {
 		.carousel {
 			--carousel-col-gap: var(--spacing-s);
-
-			flex-flow: row nowrap;
-			column-gap: var(--carousel-col-gap);
-			overflow-x: auto; /* TODO: doesn't show items outside of margin. Need to fix with different solution */
-			scroll-snap-type: x mandatory;
-			scroll-behavior: smooth;
 		}
 	}
 
