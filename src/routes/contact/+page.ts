@@ -5,3 +5,5 @@ export const load: PageLoad = ({ params }) => {
 		contactLinkInFooter: false
 	};
 };
+
+export const prerender = false;

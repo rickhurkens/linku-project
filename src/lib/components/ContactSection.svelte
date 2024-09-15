@@ -17,18 +17,18 @@
 			type="text"
 			class="contact-form-control contact-form-name"
 			placeholder="Your sweet name"
-			title="name"
+			name="name"
 		/>
 		<input
 			type="email"
 			class="contact-form-control contact-form-email"
 			placeholder="Your email address"
-			title="email"
+			name="email"
 		/>
 		<textarea
 			class="contact-form-control contact-form-message"
 			placeholder="About your message"
-			title="message"
+			name="message"
 		/>
 		<button type="submit" class="contact-form-control contact-form-submit morelink" title="Send">
 			<span>SEND</span>

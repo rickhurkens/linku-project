@@ -20,9 +20,7 @@ const mock_fetch = async (resource: string, options?: RequestInit): Promise<Resp
 			} else if (resource.endsWith('/works')) {
 				jsonData = worksJson;
 			} else {
-				resolve(
-					Response.error()
-				)
+				resolve(Response.error());
 				return;
 			}
 
