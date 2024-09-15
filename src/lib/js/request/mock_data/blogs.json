@@ -1,0 +1,38 @@
+[
+	{
+		"title": "User psychology",
+		"leadText": "The ultimate guide to proper understanding user perspective and it's impact on day to day life",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works2.png",
+		"id": "1"
+	},
+	{
+		"title": "Illustration nuance",
+		"leadText": "A brief explanation on how to apply colors",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works3.png",
+		"id": "2"
+	},
+	{
+		"title": "User resolutions",
+		"leadText": "Broadcasting valuable assets from top-down or bottom-up in the marketplace",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works2.png",
+		"id": "3"
+	},
+	{
+		"title": "User psychology",
+		"leadText": "The ultimate guide to proper understanding user perspective and it's impact on day to day life",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works3.png",
+		"id": "4"
+	},
+	{
+		"title": "Illustration nuance",
+		"leadText": "A brief explanation on how to apply colors",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works2.png",
+		"id": "5"
+	},
+	{
+		"title": "User resolutions",
+		"leadText": "Broadcasting valuable assets from top-down or bottom-up in the marketplace",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works3.png",
+		"id": "6"
+	}
+]

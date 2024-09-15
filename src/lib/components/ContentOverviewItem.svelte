@@ -103,7 +103,7 @@
 	}
 
 	.masonry-item a:has(.image-wrapper) {
-		flex: 1 0; /* TODO: causes images in carousel to be of different height based on text */
+		flex: 1 0;
 	}
 
 	.carousel-item {

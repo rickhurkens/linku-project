@@ -12,7 +12,7 @@
 			<Fa icon={faArrowUpRightFromSquare} size=".8x" />
 		</a>
 	</div>
-	<form class="contact-section-form">
+	<form class="contact-section-form" method="POST" action="/contact">
 		<input
 			type="text"
 			class="contact-form-control contact-form-name"

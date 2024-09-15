@@ -1,0 +1,17 @@
+[
+	{
+		"title": "Product design",
+		"imgUrl": "/src/lib/js/request/mock_data/images/productdesign.png",
+		"id": "product-design"
+	},
+	{
+		"title": "Branding",
+		"imgUrl": "/src/lib/js/request/mock_data/images/branding.png",
+		"id": "branding"
+	},
+	{
+		"title": "Illustration",
+		"imgUrl": "/src/lib/js/request/mock_data/images/illustration.png",
+		"id": "illustration"
+	}
+]

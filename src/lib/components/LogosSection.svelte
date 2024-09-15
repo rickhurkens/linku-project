@@ -1,8 +1,8 @@
 <script lang="ts">
-	import logoGoogle from '$lib/images/dummy_imgs/logo_google.png';
-	import logoFlickr from '$lib/images/dummy_imgs/logo_flickr.png';
-	import logoNatgeo from '$lib/images/dummy_imgs/logo_natgeo.png';
-	import logoSlack from '$lib/images/dummy_imgs/logo_slack.png';
+	import logoGoogle from '$lib/js/request/mock_data/images/logo_google.png';
+	import logoFlickr from '$lib/js/request/mock_data/images/logo_flickr.png';
+	import logoNatgeo from '$lib/js/request/mock_data/images/logo_natgeo.png';
+	import logoSlack from '$lib/js/request/mock_data/images/logo_slack.png';
 
 	const logos = [
 		{ title: 'Google', url: 'https://google.com', imgSrc: logoGoogle },
@@ -23,8 +23,6 @@
 </section>
 
 <style>
-	/* TODO: needs extra margin-top and bottom but we'll do page rhythm later */
-
 	.logos-section {
 		margin-block: var(--spacing-xs);
 		display: flex;

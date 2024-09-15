@@ -81,7 +81,7 @@
 	}
 
 	.social-links {
-		margin-right: var(--spacing-xs); /* TODO: really? */
+		margin-right: var(--spacing-2xs);
 	}
 
 	.social-links ul {
@@ -102,10 +102,6 @@
 	}
 
 	@media (width > 768px) {
-		.social-links {
-			margin-right: 0;
-		}
-
 		.logo {
 			margin-right: var(--spacing-m);
 		}

@@ -95,13 +95,13 @@ select {
 }
 
 button,
-input[type="submit"] {
+input[type='submit'] {
 	background: var(--color-5);
 	color: white;
 }
 
 button:hover,
-input[type="submit"]:hover {
+input[type='submit']:hover {
 	text-decoration: underline;
 }
 

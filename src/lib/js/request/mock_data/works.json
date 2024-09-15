@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Google Art & Culture",
+		"leadText": "Exploring New upcoming feature in Google arts and culture and it's future enhancement",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works1.png",
+		"id": "1"
+	},
+	{
+		"title": "E - bank",
+		"leadText": "Exploring New upcoming feature in Google arts and culture and it's future enhancement",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works2.png",
+		"id": "2"
+	},
+	{
+		"title": "Abstract illustration",
+		"leadText": "Engaging online class with the interaction between masters and students and offering more valuable features",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works3.png",
+		"id": "3"
+	},
+	{
+		"title": "Tutor application",
+		"leadText": "Engaging online class with the interaction between masters and students and offering more valuable features",
+		"imgUrl": "/src/lib/js/request/mock_data/images/works4.png",
+		"id": "4"
+	}
+]
