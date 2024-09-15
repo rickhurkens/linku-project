@@ -45,12 +45,13 @@
 	}
 </script>
 
-<nav>
+<nav class="main-navigation">
 	{#if !isDesktopSize}
 		<div class="mobile-menu">
 			<button
 				aria-controls={id}
 				aria-expanded={isMobileMenuOpened}
+				aria-label="Open main navigation menu"
 				on:click={toggleMenu}
 				bind:this={mobileMenuToggleButton}
 			>
@@ -72,16 +73,13 @@
 </nav>
 
 <style>
-	/* TODO: hover states */
-
 	[aria-current='page'] a {
-		/* TODO: review active state */
-		font-weight: var(--font-weight-2xl);
+		color: var(--color-2);
+		text-decoration: underline;
 	}
 
 	.mobile-menu button {
 		background: unset;
-		margin-right: var(--spacing-xs);
 		color: var(--color-1);
 		transition: scale 100ms;
 		transform: perspective(1px) translateZ(0) scale(1);
@@ -93,8 +91,11 @@
 		transform: scale(1.1);
 	}
 
-	nav ul.menu--mobile {
-		/* TODO: is this the design we want? */
+	.main-navigation {
+		z-index: 1;
+	}
+
+	.main-navigation ul.menu--mobile {
 		display: flex;
 		position: fixed;
 		top: 0;
@@ -105,38 +106,38 @@
 		row-gap: var(--spacing-3xs);
 		transition: transform 250ms ease-in-out;
 		visibility: hidden;
-		/** TODO: maybe we could find a way to also transition on closing */
+		/* TODO: maybe we could find a way to also transition on closing */
 	}
 
-	nav ul.menu--mobile.menu--left {
+	.main-navigation ul.menu--mobile.menu--left {
 		left: 0;
 		padding-right: var(--spacing-xs);
 		align-items: end;
 		transform: translateX(-100%);
 	}
 
-	nav ul.menu--mobile.menu--right {
+	.main-navigation ul.menu--mobile.menu--right {
 		right: 0;
 		padding-left: var(--spacing-xs);
 		align-items: start;
 		transform: translateX(100%);
 	}
 
-	nav ul.menu--mobile[aria-hidden='false'] {
+	.main-navigation ul.menu--mobile[aria-hidden='false'] {
 		transform: translateX(0);
 		visibility: visible;
 	}
 
-	nav li {
+	.main-navigation li {
 		list-style-type: none;
 	}
 
-	nav ul.menu--mobile a {
+	.main-navigation ul.menu--mobile a {
 		font-size: var(--font-size-l);
 	}
 
 	@media (width > 768px) {
-		nav ul {
+		.main-navigation ul {
 			display: flex;
 			flex-flow: row nowrap;
 			column-gap: var(--spacing-m);

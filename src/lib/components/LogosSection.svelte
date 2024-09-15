@@ -26,6 +26,7 @@
 	/* TODO: needs extra margin-top and bottom but we'll do page rhythm later */
 
 	.logos-section {
+		margin-block: var(--spacing-xs);
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;

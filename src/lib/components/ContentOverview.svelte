@@ -48,8 +48,8 @@
 
 	.grid--small {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-		gap: var(--spacing-s);
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: var(--spacing-s) var(--spacing-2xs);
 	}
 
 	.masonry {
@@ -109,6 +109,9 @@
 	}
 
 	@media (width > 480px) {
+		.grid--small {
+			gap: var(--spacing-s) var(--spacing-xs);
+		}
 		.carousel {
 			--carousel-col-gap: var(--spacing-s);
 		}

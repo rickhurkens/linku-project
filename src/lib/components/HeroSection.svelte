@@ -71,7 +71,6 @@
 	}
 
 	.hero-image-wrapper img {
-		aspect-ratio: 95 / 100;
 		object-fit: cover;
 	}
 </style>

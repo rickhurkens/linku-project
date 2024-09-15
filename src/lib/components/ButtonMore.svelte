@@ -11,14 +11,19 @@
 </a>
 
 <style>
-	/* TODO: hover state & responsive sizing */
 	:global(.morelink) {
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: center;
 		align-items: center;
 		column-gap: var(--spacing-2xs);
-		padding: var(--spacing-xs) var(--spacing-s);
+		padding: var(--spacing-2xs) var(--spacing-xs);
+	}
+
+	@media (width > 768px) {
+		:global(.morelink) {
+			padding: var(--spacing-xs) var(--spacing-s);
+		}
 	}
 
 	.morelink {

@@ -28,6 +28,7 @@
 	--color-3: rgb(13 25 47);
 	--color-4: rgb(115 40 255);
 	--color-5: rgb(83 176 68);
+	/* TODO: white on this color green doesn't meet minimum contrast for WCAG */
 
 	--spacing-3xs: 8px;
 	--spacing-2xs: 16px;
@@ -97,6 +98,11 @@ button,
 input[type="submit"] {
 	background: var(--color-5);
 	color: white;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	text-decoration: underline;
 }
 
 @media (width > 768px) {

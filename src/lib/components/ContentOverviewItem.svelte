@@ -70,9 +70,9 @@
 	}
 
 	a:has(.image-wrapper) {
-		flex: 1 0; /* TODO: causes images in carousel to be of different height based on text */
 		min-height: 0;
 		aspect-ratio: 16 / 10;
+		overflow: hidden;
 	}
 
 	.image-wrapper {
@@ -88,6 +88,10 @@
 		aspect-ratio: 16 / 10;
 	}
 
+	.grid--small-item h1 {
+		font-size: var(--font-size-m);
+	}
+
 	.masonry-item {
 		width: var(--masonry-item-width);
 		height: var(--masonry-large-item);
@@ -98,12 +102,20 @@
 		height: var(--masonry-small-item);
 	}
 
+	.masonry-item a:has(.image-wrapper) {
+		flex: 1 0; /* TODO: causes images in carousel to be of different height based on text */
+	}
+
 	.carousel-item {
 		min-width: 80cqi;
 		scroll-snap-align: start;
 	}
 
 	@media (width > 480px) {
+		.grid--small-item h1 {
+			font-size: var(--font-size-l);
+		}
+
 		.carousel-item {
 			/* TODO: less width as designed because on small screens
 			   there's not enough margin to show the next items. */

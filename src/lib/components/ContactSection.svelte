@@ -39,6 +39,7 @@
 
 <style>
 	.contact-section {
+		margin-block: var(--spacing-xs) var(--spacing-m);
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: center;
@@ -83,9 +84,13 @@
 
 	.contact-form-submit {
 		width: 38%;
+		min-width: 100px;
 	}
 
 	@media (width > 768px) {
+		.contact-section {
+			margin-block: var(--spacing-xs) var(--spacing-xl);
+		}
 		.contact-section-form {
 			max-width: 70%;
 		}
