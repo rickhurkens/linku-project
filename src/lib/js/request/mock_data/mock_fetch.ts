@@ -1,6 +1,7 @@
 import specialisationsJson from './specialisations.json';
 import blogsJson from './blogs.json';
 import worksJson from './works.json';
+import logosJson from './logos.json';
 
 /** TODO: mock fetch function to mock a REST response */
 const mock_fetch = async (resource: string, options?: RequestInit): Promise<Response> => {
@@ -19,6 +20,8 @@ const mock_fetch = async (resource: string, options?: RequestInit): Promise<Resp
 				jsonData = blogsJson;
 			} else if (resource.endsWith('/works')) {
 				jsonData = worksJson;
+			} else if (resource.endsWith('/logos')) {
+				jsonData = logosJson;
 			} else {
 				resolve(Response.error());
 				return;

@@ -11,11 +11,12 @@
 	$: specialisations = data?.specialisations;
 	$: works = data?.works; /* TODO: maybe limit amount of items on smaller screens */
 	$: blogs = data?.blogs;
+	$: logos = data?.logos;
 </script>
 
 <HeroSection />
 
-<LogosSection />
+<LogosSection {logos} />
 
 <HomepageSection title="Specialisation" subtitle="What I do best">
 	<ContentOverview content={specialisations} urlPrefix="/works/" type="grid--small" />

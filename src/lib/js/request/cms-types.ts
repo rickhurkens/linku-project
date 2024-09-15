@@ -17,3 +17,9 @@ export interface Work {
 	imgUrl: string;
 	id: string;
 }
+
+export interface Logo {
+	title: string;
+	url: string;
+	imgSrc: string;
+}

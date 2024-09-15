@@ -1,15 +1,7 @@
 <script lang="ts">
-	import logoGoogle from '$lib/js/request/mock_data/images/logo_google.png';
-	import logoFlickr from '$lib/js/request/mock_data/images/logo_flickr.png';
-	import logoNatgeo from '$lib/js/request/mock_data/images/logo_natgeo.png';
-	import logoSlack from '$lib/js/request/mock_data/images/logo_slack.png';
+	import type { Logo } from '$lib/js/request/cms-types';
 
-	const logos = [
-		{ title: 'Google', url: 'https://google.com', imgSrc: logoGoogle },
-		{ title: 'Flickr', url: 'https://google.com', imgSrc: logoFlickr },
-		{ title: 'National Geographic', url: 'https://google.com', imgSrc: logoNatgeo },
-		{ title: 'Slack', url: 'https://google.com', imgSrc: logoSlack }
-	];
+	export let logos: Logo[];
 </script>
 
 <section class="logos-section">

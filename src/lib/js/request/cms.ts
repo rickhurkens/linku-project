@@ -40,3 +40,7 @@ export const getWork = async (id: number): Promise<Work> => {
 export const getSpecialisations = async (): Promise<Specialisation[]> => {
 	return abstractRequest('/specialisations');
 };
+
+export const getLogos = async (): Promise<Logo[]> => {
+	return abstractRequest('/logos');
+};

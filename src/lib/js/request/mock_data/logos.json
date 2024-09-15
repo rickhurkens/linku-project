@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Google",
+    "url": "https://google.com",
+    "imgSrc": "/mock_images/logo_google.png"
+  },
+  {
+    "title": "Flickr",
+    "url": "https://flickr.com",
+    "imgSrc": "/mock_images/logo_flickr.png"
+  },
+  {
+    "title": "National Geographic",
+    "url": "https://nationalgeographic.com",
+    "imgSrc": "/mock_images/logo_natgeo.png"
+  },
+  {
+    "title": "Slack",
+    "url": "https://slack.com",
+    "imgSrc": "/mock_images/logo_slack.png"
+  }
+]
