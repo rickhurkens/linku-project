@@ -92,7 +92,7 @@
 	}
 
 	.main-navigation {
-		z-index: 1;
+		z-index: 99;
 	}
 
 	.main-navigation ul.menu--mobile {
