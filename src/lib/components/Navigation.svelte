@@ -84,6 +84,7 @@
 		transition: scale 100ms;
 		transform: perspective(1px) translateZ(0) scale(1);
 		backface-visibility: hidden;
+		padding: 0;
 		/* TODO: fix blurriness in Chrome */
 	}
 

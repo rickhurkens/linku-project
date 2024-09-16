@@ -66,7 +66,6 @@
 	.left {
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: first;
 		align-items: center;
 		height: 100%;
 	}
@@ -78,6 +77,7 @@
 
 	.logo img {
 		height: 100%;
+		object-fit: contain;
 	}
 
 	.social-links {
@@ -101,6 +101,11 @@
 		color: var(--color-5);
 	}
 
+	@media (width > 480px) {
+		.logo {
+			margin-right: var(--spacing-xs);
+		}
+	}
 	@media (width > 768px) {
 		.logo {
 			margin-right: var(--spacing-m);

@@ -23,7 +23,7 @@
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: end;
-		margin-right: calc(-1 * var(--container-horizontal-margin));
+		margin-right: calc(-2 * var(--container-horizontal-margin));
 		width: 100vw;
 		position: relative;
 		right: var(--container-horizontal-margin);
@@ -86,6 +86,7 @@
 			align-items: center;
 			width: unset;
 			right: unset;
+			margin-right: calc(-1 * var(--container-horizontal-margin));
 		}
 
 		.hero-text {
